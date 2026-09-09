@@ -1,4 +1,4 @@
-# 🍽️ Zomato Bangalore Restaurant Data Science Project
+# Zomato Bangalore Restaurant Data Science Project
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
@@ -12,7 +12,7 @@ This project analyzes Zomato restaurant data from Bangalore to discover restaura
 
 ---
 
-## 🔗 Project Links
+## Project Links
 
 - **GitHub Repository:**  
   [Zomato Bangalore Restaurant Data Science Project](https://github.com/KartikKachwahe/ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT)
@@ -22,7 +22,7 @@ This project analyzes Zomato restaurant data from Bangalore to discover restaura
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Bangalore has a highly competitive restaurant market. Restaurant owners and food-delivery platforms need to understand:
 
@@ -37,7 +37,7 @@ This project answers these questions using data cleaning, exploratory data analy
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 The main objectives of this project are:
 
@@ -58,7 +58,7 @@ The main objectives of this project are:
 
 ---
 
-## 📊 Dataset Description
+## Dataset Description
 
 The original dataset contains:
 
@@ -86,7 +86,7 @@ The original dataset contains:
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ```text
 Business Understanding
@@ -120,7 +120,7 @@ Business Insights and Recommendations
 
 ---
 
-## 🧹 Data Cleaning and Preprocessing
+## Data Cleaning and Preprocessing
 
 The following cleaning steps were performed:
 
@@ -152,7 +152,7 @@ After cleaning and validation:
 
 ---
 
-## 📈 Exploratory Data Analysis
+## Exploratory Data Analysis
 
 The exploratory analysis covers:
 
@@ -191,7 +191,7 @@ Box plots and statistical summaries were used to identify unusually high values 
 
 ---
 
-## 📌 Key Performance Indicators
+## Key Performance Indicators
 
 | KPI | Result |
 |---|---:|
@@ -210,7 +210,7 @@ Box plots and statistical summaries were used to identify unusually high values 
 
 ---
 
-## 🔍 Important Business Insights
+## Important Business Insights
 
 ### 1. Location Analysis
 
@@ -262,7 +262,7 @@ Popular and expensive restaurants tend to have somewhat higher ratings, but corr
 
 ---
 
-## 🛠️ Feature Engineering
+## Feature Engineering
 
 The following features were created:
 
@@ -281,7 +281,7 @@ Feature engineering helped convert raw restaurant information into model-ready v
 
 ---
 
-# 🤖 Machine Learning
+# Machine Learning
 
 ## Classification: Expensive Restaurant Prediction
 
@@ -442,7 +442,7 @@ These restaurants generally have:
 
 ---
 
-## 📉 Dimensionality Reduction
+## Dimensionality Reduction
 
 ### Principal Component Analysis
 
@@ -457,7 +457,7 @@ t-SNE was applied to a random sample of restaurants to visualize nonlinear clust
 
 ---
 
-## 💼 Business Recommendations
+## Business Recommendations
 
 ### 1. Location Strategy
 
@@ -546,7 +546,7 @@ Models should be monitored and retrained when new market data becomes available.
 
 ---
 
-## 🧰 Technologies and Libraries
+## Technologies and Libraries
 
 - Python
 - Jupyter Notebook
@@ -560,7 +560,7 @@ Models should be monitored and retrained when new market data becomes available.
 
 ---
 
-## 📁 Suggested Repository Structure
+## Suggested Repository Structure
 
 ```text
 ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT/
@@ -584,7 +584,7 @@ Only include folders and files that actually exist in your repository.
 
 ---
 
-## ⚙️ Installation and Setup
+## Installation and Setup
 
 ### 1. Clone the Repository
 
@@ -652,7 +652,7 @@ Make sure `zomato.csv` is placed in the same folder as the notebook.
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 The `requirements.txt` file can contain:
 
@@ -667,7 +667,7 @@ jupyter
 
 ---
 
-## ⚠️ Project Limitations
+## Project Limitations
 
 - The data represents a historical snapshot of Bangalore restaurants.
 - Ratings and votes may change over time.
@@ -679,7 +679,7 @@ jupyter
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 - Apply group-aware validation using restaurant names.
 - Add SHAP-based model explanations.
@@ -692,7 +692,7 @@ jupyter
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This project demonstrates a complete data science workflow:
 
@@ -718,7 +718,7 @@ The project goes beyond simply training machine-learning models. It combines tec
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Kartik Kachwahe**
 
@@ -729,4 +729,4 @@ Aspiring Data Analyst and Data Scientist
 
 ---
 
-⭐ If you found this project useful, consider giving the repository a star.
+If you found this project useful, consider giving the repository a star.
