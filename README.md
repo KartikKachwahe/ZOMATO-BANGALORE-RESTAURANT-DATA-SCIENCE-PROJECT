@@ -1,490 +1,732 @@
-Zomato Bangalore Restaurant Data Science Project
+# 🍽️ Zomato Bangalore Restaurant Data Science Project
 
-An end-to-end data science project developed as part of the Alfido Tech Data Science Internship. It analyzes Bangalore restaurant data to identify market trends, customer preferences, pricing patterns, and restaurant segments, while applying classification, regression, clustering, and dimensionality-reduction techniques.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Internship](https://img.shields.io/badge/Internship-Alfido%20Tech-red)
 
-Project Links
+An end-to-end data science project developed as part of the **Alfido Tech Data Science Internship**.
 
-GitHub Repository: Zomato Bangalore Restaurant Data Science Project
+This project analyzes Zomato restaurant data from Bangalore to discover restaurant-market patterns, customer preferences, pricing trends, popular cuisines, and service availability. It also uses machine learning for restaurant price classification, rating prediction, and restaurant segmentation.
 
-Complete Notebook: View Jupyter Notebook
+---
 
-Project Objectives
+## 🔗 Project Links
 
-Clean and validate the raw Zomato restaurant data.
+- **GitHub Repository:**  
+  [Zomato Bangalore Restaurant Data Science Project](https://github.com/KartikKachwahe/ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT)
 
-Analyze restaurant locations, types, cuisines, ratings, costs, and customer votes.
+- **Jupyter Notebook:**  
+  [View Complete Project Notebook](https://github.com/KartikKachwahe/ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT/blob/main/Alfido_Tech_Zomato_Complete_Data_Science_Project.ipynb)
 
-Measure the availability and effect of online ordering and table booking.
+---
 
-Build a classification model to predict whether a restaurant is expensive.
+## 📌 Project Overview
 
-Build regression models to predict restaurant ratings.
+Bangalore has a highly competitive restaurant market. Restaurant owners and food-delivery platforms need to understand:
 
-Segment restaurants into meaningful groups using clustering.
+- Which locations have the highest restaurant concentration?
+- Which cuisines and restaurant types are most popular?
+- How do online ordering and table booking relate to ratings?
+- What factors distinguish expensive restaurants?
+- Can restaurant ratings be predicted using available features?
+- Can restaurants be grouped into meaningful business segments?
 
-Convert analytical results into practical business recommendations.
+This project answers these questions using data cleaning, exploratory data analysis, machine learning, clustering, and business interpretation.
 
-Dataset Description
+---
 
-The raw dataset contains 56,252 rows and 13 columns representing restaurants listed on Zomato in Bangalore.
+## 🎯 Project Objectives
 
-Feature
+The main objectives of this project are:
 
-Description
+1. Clean and validate the raw Zomato dataset.
+2. Identify and remove malformed and duplicate records.
+3. Analyze restaurant locations, types, cuisines, ratings, costs, and votes.
+4. Calculate important restaurant-market KPIs.
+5. Study online-order and table-booking availability.
+6. Create useful features for machine learning.
+7. Predict whether a restaurant belongs to the expensive category.
+8. Predict restaurant ratings using regression.
+9. Compare multiple classification and regression algorithms.
+10. optimize selected models using hyperparameter tuning.
+11. Identify important predictive features.
+12. Segment restaurants using unsupervised learning.
+13. Visualize segments using PCA and t-SNE.
+14. Provide actionable business recommendations.
 
-name
+---
 
-Restaurant name
+## 📊 Dataset Description
 
-address
+The original dataset contains:
 
-Restaurant address
+- **56,252 rows**
+- **13 columns**
+- Restaurant information from different areas of Bangalore
 
-location
+### Dataset Features
 
-Area in Bangalore
+| Column | Description |
+|---|---|
+| `address` | Restaurant address |
+| `name` | Restaurant name |
+| `online_order` | Whether online ordering is available |
+| `book_table` | Whether table booking is available |
+| `rate` | Restaurant rating |
+| `votes` | Number of customer votes |
+| `phone` | Restaurant contact number |
+| `location` | Area in Bangalore |
+| `rest_type` | Restaurant type |
+| `dish_liked` | Popular dishes |
+| `cuisines` | Cuisines offered |
+| `approx_cost(for two people)` | Approximate cost for two customers |
+| `listed_in(type)` | Zomato listing category |
 
-online_order
+---
 
-Availability of online ordering
+## 🔄 Project Workflow
 
-book_table
-
-Availability of table booking
-
-rate
-
-Restaurant rating
-
-votes
-
-Number of customer votes
-
-phone
-
-Contact information
-
-rest_type
-
-Restaurant category/type
-
-dish_liked
-
-Popular dishes
-
-cuisines
-
-Cuisines offered
-
-approx_cost(for two people)
-
-Estimated cost for two people
-
-listed_in(type)
-
-Zomato listing category
-
-Project Workflow
-
-Business understanding and objective definition
-
-Data loading and structural validation
-
-Missing-value, duplicate, and malformed-record analysis
-
-Data cleaning and type conversion
-
-KPI calculation
-
-Exploratory data analysis
-
-Feature engineering
-
-Classification model training and comparison
-
-Regression model training and comparison
-
-Cross-validation and hyperparameter tuning
-
-Feature-importance analysis
-
-K-Means and DBSCAN clustering
-
-PCA and t-SNE visualization
-
-Business insights and recommendations
-
-Data Cleaning and Preprocessing
-
-Detected 15,703 exact duplicate rows in the raw data.
-
-Removed structurally malformed records using valid domains for online ordering, table booking, and listing type.
-
-Removed duplicates after structural validation.
-
-Converted ratings such as 4.1/5 into numeric values.
-
-Removed commas and converted approximate cost into a numeric field.
-
-Converted votes into numeric format.
-
-Handled missing numerical and categorical values inside machine-learning pipelines.
-
-Excluded high-cardinality reference fields, such as phone and address, from primary model features.
-
-Used one-hot encoding for categorical variables and appropriate scaling for numerical variables.
-
-The final analytical dataset contains 33,660 clean restaurant listings, 8,641 unique restaurant names, and 93 locations.
-
+```text
+Business Understanding
+        ↓
+Data Loading and Understanding
+        ↓
+Data Quality Assessment
+        ↓
+Data Cleaning and Validation
+        ↓
 Exploratory Data Analysis
-
-The notebook examines:
-
-Rating, vote, and cost distributions
-
-Top restaurant locations, types, and cuisines
-
-Online-order and table-booking availability
-
-Rating differences across service options
-
-Relationships among rating, cost, votes, and cuisine count
-
-Outliers and numerical correlations
-
-Market concentration across Bangalore locations
-
-Key Performance Indicators
-
-KPI
-
-Result
-
-Clean restaurant listings
-
-33,660
-
-Unique restaurant names
-
-8,641
-
-Locations represented
-
-93
-
-Valid rated records
-
-28,133
-
-Average rating
-
-3.68/5
-
-Median rating
-
-3.70/5
-
-Average cost for two
-
-₹545.49
-
-Median cost for two
-
-₹400
-
-Average votes
-
-222.62
-
-Median votes
-
-44
-
-Online ordering available
-
-60.21%
-
-Table booking available
-
-11.58%
-
-Key Insights
-
-BTM has the highest restaurant concentration, with 2,781 listings.
-
-Quick Bites is the most common restaurant type, with 12,691 listings.
-
-North Indian is the most frequently represented cuisine, appearing 13,912 times.
-
-Delivery is the most common listing category.
-
-Restaurants offering online ordering have a slightly higher average rating (3.705) than those without it (3.629).
-
-Restaurants offering table booking have a considerably higher average rating (4.078) than those without it (3.617).
-
-Rating has a moderate positive relationship with votes (0.399) and cost (0.334). These correlations represent association, not causation.
-
+        ↓
+KPI Development
+        ↓
 Feature Engineering
+        ↓
+Classification Modeling
+        ↓
+Regression Modeling
+        ↓
+Cross-Validation and Hyperparameter Tuning
+        ↓
+Feature Importance
+        ↓
+Restaurant Clustering
+        ↓
+PCA and t-SNE Visualization
+        ↓
+Business Insights and Recommendations
+```
+
+---
+
+## 🧹 Data Cleaning and Preprocessing
+
+The following cleaning steps were performed:
+
+- Examined dataset structure, data types, and unique values.
+- Identified missing values in each column.
+- Detected **15,703 exact duplicate rows** in the raw dataset.
+- Identified malformed records where review text appeared in incorrect columns.
+- Validated `online_order`, `book_table`, and `listed_in(type)` using their expected values.
+- Removed **8,896 structurally malformed records**.
+- Removed duplicate rows after structural validation.
+- Converted ratings such as `4.1/5` into numeric values.
+- Converted votes into a numeric column.
+- Removed commas from restaurant costs and converted them into numeric values.
+- Retained missing ratings for general analysis.
+- Removed records with missing target values only when training models.
+- Used median imputation for numerical model features.
+- Used most-frequent imputation for categorical model features.
+- Applied one-hot encoding to categorical variables.
+- Used machine-learning pipelines to prevent data leakage.
 
-The notebook creates useful model features, including:
+### Final Cleaned Dataset
 
-Clean numeric rating
+After cleaning and validation:
 
-Clean numeric cost for two
+- **Clean listings:** 33,660
+- **Unique restaurant names:** 8,641
+- **Locations represented:** 93
+- **Valid rated records:** 28,133
 
-Numeric vote count
+---
 
-Number of cuisines offered
+## 📈 Exploratory Data Analysis
 
-Online-order binary flag
+The exploratory analysis covers:
 
-Table-booking binary flag
+### Univariate Analysis
 
-Expensive-restaurant target based on the median cost
+- Rating distribution
+- Cost distribution
+- Vote distribution
+- Restaurant-type frequency
+- Cuisine frequency
+- Location frequency
 
-Log-transformed vote count for clustering
+### Bivariate Analysis
 
-Classification: Expensive Restaurant Prediction
+- Rating versus online-order availability
+- Rating versus table-booking availability
+- Rating versus cost
+- Rating versus votes
+- Cost across restaurant types
+- Restaurant distribution by location
 
-The classification task predicts whether a restaurant belongs to the expensive category. The data is divided into an 80% training set and 20% test set, using stratification to preserve the target distribution.
+### Multivariate Analysis
 
-Models compared:
+- Relationships among rating, cost, votes, and cuisine count
+- Service availability across restaurant categories
+- Correlation analysis among numerical features
+- Restaurant-segment comparisons
 
-Logistic Regression
+### Outlier Analysis
 
-Decision Tree
+Box plots and statistical summaries were used to identify unusually high values in:
 
-Random Forest
+- Votes
+- Cost for two
+- Restaurant engagement
 
-Gradient Boosting
+---
 
-K-Nearest Neighbors
+## 📌 Key Performance Indicators
 
-Support Vector Machine
+| KPI | Result |
+|---|---:|
+| Clean restaurant listings | 33,660 |
+| Unique restaurant names | 8,641 |
+| Number of locations | 93 |
+| Valid rated records | 28,133 |
+| Average rating | 3.68/5 |
+| Median rating | 3.70/5 |
+| Average cost for two | ₹545.49 |
+| Median cost for two | ₹400 |
+| Average votes | 222.62 |
+| Median votes | 44 |
+| Restaurants with online ordering | 60.21% |
+| Restaurants with table booking | 11.58% |
 
-Best Classification Result
+---
 
-Random Forest produced the strongest test performance:
+## 🔍 Important Business Insights
 
-Metric
+### 1. Location Analysis
 
-Score
+- **BTM** has the highest restaurant concentration.
+- BTM contains approximately **2,781 restaurant listings**.
+- Other highly represented areas include Whitefield, HSR, Marathahalli, and Indiranagar.
 
-Accuracy
+A high restaurant count indicates strong market demand but also greater competition.
 
-0.928
+### 2. Restaurant-Type Analysis
 
-Precision
+- **Quick Bites** is the most common restaurant type.
+- It contains approximately **12,691 listings**.
+- This indicates strong demand for affordable and convenient food options.
 
-0.950
+### 3. Cuisine Analysis
 
-Recall
+- **North Indian** is the most frequently represented cuisine.
+- It appears approximately **13,912 times** in the cleaned data.
+- High cuisine popularity indicates strong demand but may also indicate market saturation.
 
-0.897
+### 4. Listing-Type Analysis
 
-F1 Score
+- **Delivery** is the most common Zomato listing category.
+- This highlights the importance of delivery-oriented restaurant operations.
 
-0.923
+### 5. Online Ordering
 
-ROC-AUC
+- Approximately **60.21%** of restaurants provide online ordering.
+- Restaurants with online ordering have an average rating of approximately **3.705**.
+- Restaurants without online ordering have an average rating of approximately **3.629**.
 
-0.972
+Online ordering is associated with a slightly higher average rating, but this does not prove that online ordering directly causes better ratings.
 
-Randomized hyperparameter search produced a best cross-validation F1 score of 0.8939. The most influential classification features included vote count, restaurant type, rating, cuisine count, and table-booking availability.
+### 6. Table Booking
 
-Regression: Restaurant Rating Prediction
+- Only **11.58%** of restaurants offer table booking.
+- Restaurants with table booking have an average rating of approximately **4.078**.
+- Restaurants without table booking have an average rating of approximately **3.617**.
 
-The regression task estimates a restaurant's rating. The following models were evaluated:
+Table booking is more common among premium, buffet, pub, and casual-dining restaurants.
 
-Linear Regression
+### 7. Correlation Findings
 
-Ridge Regression
+- Correlation between rating and votes: **0.399**
+- Correlation between rating and cost: **0.334**
 
-Lasso Regression
+Popular and expensive restaurants tend to have somewhat higher ratings, but correlation does not imply causation.
 
-Elastic Net
+---
 
-Decision Tree Regressor
+## 🛠️ Feature Engineering
 
-Random Forest Regressor
+The following features were created:
 
-Gradient Boosting Regressor
+| Feature | Purpose |
+|---|---|
+| `rating` | Clean numeric restaurant rating |
+| `votes_num` | Numeric customer vote count |
+| `cost_for_two` | Clean numeric restaurant cost |
+| `cuisine_count` | Number of cuisines offered |
+| `online_order_flag` | Binary indicator for online ordering |
+| `book_table_flag` | Binary indicator for table booking |
+| `is_expensive` | Classification target based on median cost |
+| `log_votes` | Log-transformed vote count for clustering |
 
-Extra Trees Regressor
+Feature engineering helped convert raw restaurant information into model-ready variables.
 
-Best Regression Result
+---
 
-Extra Trees Regressor achieved the best test performance:
+# 🤖 Machine Learning
 
-Metric
+## Classification: Expensive Restaurant Prediction
 
-Score
+The classification objective is to predict whether a restaurant belongs to the expensive category.
 
-MAE
+The expensive category was created using the median restaurant cost as the threshold.
 
-0.065
+### Classification Models Compared
 
-RMSE
+- Logistic Regression
+- Decision Tree Classifier
+- Random Forest Classifier
+- Gradient Boosting Classifier
+- K-Nearest Neighbors
+- Support Vector Machine
 
-0.161
+The dataset was divided into:
 
-R² Score
+- **80% training data**
+- **20% testing data**
 
-0.858
+Stratified sampling was used to maintain the target distribution.
 
-Vote count was the most influential rating-prediction feature, followed by cost for two and cuisine count. Because repeated restaurant listings may carry similar information, these strong test results should be confirmed with group-aware validation before production use.
+### Classification Results
 
-Restaurant Segmentation
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Random Forest | 0.928 | 0.950 | 0.897 | 0.923 | 0.972 |
+| KNN | 0.862 | 0.885 | 0.817 | 0.850 | 0.927 |
+| SVM | 0.858 | 0.906 | 0.784 | 0.841 | 0.914 |
+| Gradient Boosting | 0.858 | 0.911 | 0.779 | 0.840 | 0.918 |
+| Decision Tree | 0.857 | 0.912 | 0.775 | 0.838 | 0.914 |
+| Logistic Regression | 0.853 | 0.903 | 0.776 | 0.834 | 0.919 |
 
-K-Means clustering was evaluated using the elbow method and silhouette score. The best silhouette result selected two clusters.
+### Best Classification Model
 
-Segment
+The **Random Forest Classifier** produced the best overall performance:
 
-Listings
+- Accuracy: **92.8%**
+- Precision: **95.0%**
+- Recall: **89.7%**
+- F1 Score: **92.3%**
+- ROC-AUC: **97.2%**
 
-Avg. Rating
+RandomizedSearchCV was used for hyperparameter optimization.
 
-Avg. Votes
+- Best cross-validation F1 score: **0.8939**
+- Important features included votes, restaurant type, rating, cuisine count, and table-booking availability.
 
-Avg. Cost
+---
 
-Table Booking
+## Regression: Restaurant Rating Prediction
 
-Interpretation
+The regression objective is to predict the restaurant rating using restaurant characteristics.
 
-Cluster 0
+### Regression Models Compared
 
-9,378
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Elastic Net Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+- Gradient Boosting Regressor
+- Extra Trees Regressor
 
-3.97
+### Regression Results
 
-590.69
+| Model | MAE | RMSE | R² Score |
+|---|---:|---:|---:|
+| Extra Trees | 0.065 | 0.161 | 0.858 |
+| Random Forest | 0.164 | 0.246 | 0.669 |
+| Decision Tree | 0.204 | 0.298 | 0.515 |
+| Gradient Boosting | 0.223 | 0.314 | 0.460 |
+| Ridge Regression | 0.269 | 0.349 | 0.333 |
+| Linear Regression | 0.269 | 0.349 | 0.333 |
+| Elastic Net | 0.276 | 0.355 | 0.309 |
+| Lasso Regression | 0.278 | 0.357 | 0.301 |
 
-₹957.74
+### Best Regression Model
 
-38%
+The **Extra Trees Regressor** produced the best test performance:
 
-Higher-engagement, premium dine-in restaurants
+- MAE: **0.065**
+- RMSE: **0.161**
+- R² Score: **0.858**
 
-Cluster 1
+The model explains approximately **85.8% of the variation** in restaurant ratings.
 
-24,282
+The most important rating-prediction features were:
 
-3.54
+1. Customer votes
+2. Cost for two
+3. Number of cuisines
+4. Restaurant type
+5. Location
+6. Table-booking availability
 
-80.46
+Because the dataset can contain multiple listings for the same restaurant, future validation should use restaurant-name-based group splitting to confirm model generalization.
 
-₹385.51
+---
 
-1%
+## 🧩 Restaurant Segmentation
 
-Budget and quick-service restaurants
+Restaurant segmentation was performed using:
 
-The best K-Means silhouette score was 0.346 at k = 2.
+- K-Means clustering
+- DBSCAN
+- RobustScaler
+- Elbow method
+- Silhouette score
+- PCA
+- t-SNE
 
-PCA's first two components explained approximately 71.43% of the variance.
+### K-Means Selection
 
-DBSCAN was also tested on a sample to explore density-based groups and noise points.
+The silhouette score was calculated for different values of `k`.
 
-t-SNE was used to visualize cluster structure in two dimensions.
+- Best number of clusters: **2**
+- Best silhouette score: **0.346**
 
-Business Recommendations
+### Cluster Profiles
 
-Evaluate location demand, competition, cuisine saturation, and price positioning before opening a new restaurant.
+| Metric | Cluster 0 | Cluster 1 |
+|---|---:|---:|
+| Restaurant listings | 9,378 | 24,282 |
+| Average rating | 3.97 | 3.54 |
+| Average votes | 590.69 | 80.46 |
+| Average cost | ₹957.74 | ₹385.51 |
+| Median cost | ₹800 | ₹350 |
+| Online-order rate | 66% | 58% |
+| Table-booking rate | 38% | 1% |
+| Average cuisine count | 3.65 | 1.98 |
 
-Strengthen online ordering, delivery reliability, packaging, and digital menus because online ordering is widely available.
+### Cluster Interpretation
 
-Use table-booking systems for premium, buffet, pub, and casual-dining formats where customer planning matters.
+#### Cluster 0: Premium and High-Engagement Restaurants
 
-Differentiate popular cuisines through quality, price, menu design, service, or a specialized offering.
+These restaurants generally have:
 
-Use location- and segment-specific pricing instead of applying one pricing strategy across Bangalore.
+- Higher ratings
+- Higher customer engagement
+- Higher average cost
+- More cuisines
+- Greater table-booking availability
+- A stronger casual-dining presence
 
-Encourage authentic reviews and improve complaint resolution because votes and ratings are important engagement signals.
+#### Cluster 1: Budget and Quick-Service Restaurants
 
-Use separate marketing and operating strategies for premium dine-in and budget quick-service segments.
+These restaurants generally have:
 
-Treat model predictions as decision-support inputs and validate them regularly with new data.
+- Lower average cost
+- Lower customer engagement
+- Limited table-booking facilities
+- Fewer cuisines
+- A stronger quick-bites presence
+- Greater focus on affordability and convenience
 
-Technologies Used
+---
 
-Python
+## 📉 Dimensionality Reduction
 
-Jupyter Notebook
+### Principal Component Analysis
 
-Pandas and NumPy
+PCA was used to project the clustering features into two dimensions.
 
-Matplotlib and Seaborn
+- The first two components explain approximately **71.43% of the total variance**.
+- The PCA plot helps visualize separation between the restaurant segments.
 
-Scikit-learn
+### t-SNE
 
-Git and GitHub
+t-SNE was applied to a random sample of restaurants to visualize nonlinear cluster structure in two dimensions.
 
-How to Run the Project
+---
 
-Clone the repository:
+## 💼 Business Recommendations
 
-git clone https://github.com/KartikKachwahe/ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT.git
-cd ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT
+### 1. Location Strategy
 
-Create and activate a virtual environment:
+Before opening a restaurant, evaluate:
 
-python -m venv .venv
+- Local demand
+- Competition
+- Cuisine saturation
+- Customer spending capacity
+- Nearby restaurant ratings
+- Delivery demand
 
-Windows PowerShell:
+High-density areas offer strong demand but also greater competition.
 
-.\.venv\Scripts\Activate.ps1
+### 2. Online Ordering Strategy
 
-macOS/Linux:
+Restaurants should improve:
 
-source .venv/bin/activate
+- Ordering convenience
+- Digital menus
+- Packaging quality
+- Delivery speed
+- Order accuracy
+- Customer support
 
-Install the required packages:
+### 3. Table-Booking Strategy
 
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+Premium, buffet, pub, and casual-dining restaurants should consider table-booking systems to improve:
 
-Ensure that zomato.csv is in the same folder as the notebook.
+- Customer convenience
+- Seating management
+- Waiting-time reduction
+- Capacity planning
 
-Start Jupyter Notebook:
+### 4. Cuisine Strategy
 
-jupyter notebook
+Popular cuisines such as North Indian have strong demand but also high competition.
 
-Open Alfido_Tech_Zomato_Complete_Data_Science_Project.ipynb and select Kernel → Restart & Run All.
+Restaurants should differentiate themselves using:
 
-Suggested Repository Structure
+- Food quality
+- Unique menu items
+- Competitive pricing
+- Better service
+- Strong branding
+- Specialized cuisine offerings
 
+### 5. Pricing Strategy
+
+Restaurants should not use one pricing strategy across the entire city.
+
+Pricing should depend on:
+
+- Target customers
+- Location
+- Restaurant type
+- Cuisine
+- Service quality
+- Competitor prices
+
+### 6. Customer-Engagement Strategy
+
+Restaurants should:
+
+- Encourage authentic customer reviews
+- Respond quickly to complaints
+- Maintain consistent food quality
+- Improve customer service
+- Track changes in ratings and votes
+
+### 7. Segment-Specific Strategy
+
+For premium restaurants:
+
+- Focus on experience, service, reservations, loyalty, and reputation.
+
+For budget restaurants:
+
+- Focus on affordability, speed, delivery, efficiency, and repeat orders.
+
+### 8. Responsible Model Use
+
+Machine-learning models should support business decisions rather than completely replace human judgment.
+
+Models should be monitored and retrained when new market data becomes available.
+
+---
+
+## 🧰 Technologies and Libraries
+
+- Python
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Git
+- GitHub
+
+---
+
+## 📁 Suggested Repository Structure
+
+```text
 ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT/
+│
 ├── Alfido_Tech_Zomato_Complete_Data_Science_Project.ipynb
 ├── zomato.csv
 ├── README.md
 ├── requirements.txt
+│
 ├── images/
 │   ├── classification_model_comparison.png
 │   ├── regression_model_comparison.png
+│   ├── feature_importance.png
 │   └── restaurant_clusters.png
+│
 └── report/
     └── Zomato_Bangalore_Project_Report.pdf
+```
 
-Limitations and Future Improvements
+Only include folders and files that actually exist in your repository.
 
-Confirm model generalization using group-aware splitting by restaurant name to reduce leakage from repeated listings.
+---
 
-Add explainability using SHAP values.
+## ⚙️ Installation and Setup
 
-Test advanced models such as XGBoost, LightGBM, or CatBoost.
+### 1. Clone the Repository
 
-Deploy the trained models through a Streamlit application.
+```bash
+git clone https://github.com/KartikKachwahe/ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT.git
+```
 
-Add geographic coordinates for map-based location analysis.
+### 2. Open the Project Folder
 
-Re-train the models on recent restaurant-market data.
+```bash
+cd ZOMATO-BANGALORE-RESTAURANT-DATA-SCIENCE-PROJECT
+```
 
-Conclusion
+### 3. Create a Virtual Environment
 
-This project demonstrates a complete data science lifecycle: business understanding, data validation, cleaning, exploratory analysis, KPI development, feature engineering, supervised learning, hyperparameter tuning, feature importance, clustering, dimensionality reduction, and business interpretation. It shows how restaurant data can support pricing, service, location, marketing, and customer-experience decisions.
+```bash
+python -m venv .venv
+```
 
-Author
+### 4. Activate the Environment
 
-Kartik Kachwahe
-B.Tech in Information Technology
-Aspiring Data Analyst / Data Scientist
+For Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+For macOS or Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+### 5. Install Required Libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+Alternatively, if `requirements.txt` is available:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Start Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open:
+
+```text
+Alfido_Tech_Zomato_Complete_Data_Science_Project.ipynb
+```
+
+Then select:
+
+```text
+Kernel → Restart & Run All
+```
+
+Make sure `zomato.csv` is placed in the same folder as the notebook.
+
+---
+
+## 📦 Requirements
+
+The `requirements.txt` file can contain:
+
+```text
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+jupyter
+```
+
+---
+
+## ⚠️ Project Limitations
+
+- The data represents a historical snapshot of Bangalore restaurants.
+- Ratings and votes may change over time.
+- Missing values can reduce the available training data.
+- Correlation does not establish a cause-and-effect relationship.
+- Multiple listings for the same restaurant may influence model performance.
+- Geographic coordinates were not available for detailed map analysis.
+- Restaurant predictions should be validated before real-world deployment.
+
+---
+
+## 🚀 Future Improvements
+
+- Apply group-aware validation using restaurant names.
+- Add SHAP-based model explanations.
+- Compare XGBoost, LightGBM, and CatBoost models.
+- Create a Streamlit prediction application.
+- Add geographic maps using restaurant coordinates.
+- Build an interactive Power BI or Tableau dashboard.
+- Create a model deployment API using FastAPI.
+- Retrain the models using recent Zomato data.
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates a complete data science workflow:
+
+```text
+Business Understanding
+→ Data Validation
+→ Data Cleaning
+→ Exploratory Data Analysis
+→ KPI Development
+→ Feature Engineering
+→ Classification
+→ Regression
+→ Cross-Validation
+→ Hyperparameter Tuning
+→ Feature Importance
+→ Clustering
+→ PCA and t-SNE
+→ Business Insights
+→ Recommendations
+```
+
+The project goes beyond simply training machine-learning models. It combines technical analysis with business understanding to support decisions related to restaurant pricing, location selection, service availability, customer engagement, marketing, and restaurant segmentation.
+
+---
+
+## 👨‍💻 Author
+
+**Kartik Kachwahe**
+
+B.Tech in Information Technology  
+Aspiring Data Analyst and Data Scientist
+
+- **GitHub:** [KartikKachwahe](https://github.com/KartikKachwahe)
+
+---
+
+⭐ If you found this project useful, consider giving the repository a star.
