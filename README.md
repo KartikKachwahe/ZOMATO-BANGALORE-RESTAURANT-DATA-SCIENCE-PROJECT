@@ -5,7 +5,7 @@
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-yellow)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Internship](https://img.shields.io/badge/Internship-Alfido%20Tech-red)
-
+ 
 An end-to-end data science project developed as part of the **Alfido Tech Data Science Internship**.
 
 This project analyzes Zomato restaurant data from Bangalore to discover restaurant-market patterns, customer preferences, pricing trends, popular cuisines, and service availability. It also uses machine learning for restaurant price classification, rating prediction, and restaurant segmentation.
